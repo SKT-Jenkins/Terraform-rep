@@ -10,3 +10,33 @@ resource "azurerm_resource_group" "stripathi_rg" {
     build_tag = "${var.build_tag}"
     git_url = "${var.build_tag}"
     git_commit_hash = "${var.build_tag}"
+  }
+}
+
+module "stripathi_windows_server" {
+  source = "git@github.com:SKT-Jenkins/Terraform-rep.git//az-compute/windows?ref=master"
+  environment = "${var.environment}"
+  subnet_id =
+  resource_group =
+  user_password =
+  size =
+  count =
+  index_offset = app_id = 
+  machine_image_rg 
+
+# add tags here
+}
+
+module "stripathi_linux_server" {
+  source = "git@github.com:SKT-Jenkins/Terraform-rep.git//az-compute/rhel?ref=master"
+  environment = "${var.environment}"
+  subnet_id =
+  resource_group =
+  user_password =
+  size =
+  count =
+  index_offset = app_id = 
+  machine_image_rg 
+
+# add tags here
+}
